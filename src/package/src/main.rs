@@ -40,7 +40,7 @@ macro_rules! DESKTOP_ENTRY_FMT {
         "[Desktop Entry]
 Type=Application
 Version=1.5
-Name=iOS Notification Forwarder
+Name={}
 Icon={}
 Categories=Utility
 Exec={}
@@ -260,7 +260,7 @@ async fn main() -> Result<(), Error> {
                 desktopentry,
                 format!(
                     DESKTOP_ENTRY_FMT!(),
-                    pkg_name, pkg_name
+                    pkg_name, pkg_name, pkg_name
                 )
                 .as_bytes(),
             )
